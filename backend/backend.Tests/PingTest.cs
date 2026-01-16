@@ -1,35 +1,29 @@
 using Microsoft.AspNetCore.Mvc.Testing;
+using Xunit;
 
 namespace backend.Tests;
 
-public class PingTest
+public class PingTest : IClassFixture<WebApplicationFactory<Program>>
 {
-    private WebApplicationFactory<Program> _factory;
-    private HttpClient _client;
+    private readonly WebApplicationFactory<Program> _factory;
 
-    [SetUp]
-    public void Setup()
+    public PingTest(WebApplicationFactory<Program> factory)
     {
-        _factory = new WebApplicationFactory<Program>();
-        _client = _factory.CreateClient();
+        _factory = factory;
     }
 
-    [TearDown]
-    public void TearDown()
-    {
-        _client.Dispose();
-        _factory.Dispose();
-    }
-
-    [Test]
+    [Fact]
     public async Task Ping_ReturnsPongiii()
     {
+        // Arrange
+        var client = _factory.CreateClient();
+
         // Act
-        var response = await _client.GetAsync("/ping");
+        var response = await client.GetAsync("/ping");
 
         // Assert
         response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
-        Assert.That(content, Is.EqualTo("pongiii"));
+        Assert.Equal("pongiii", content);
     }
 }
