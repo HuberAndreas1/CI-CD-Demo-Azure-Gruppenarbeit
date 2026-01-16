@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+
+# .NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+ncrunch.solution.user
+_ReSharper.Caches/
+_ReSharper.Projects/
+[Tt]est[Rr]esult*
+[Bb]uild[Ll]og.*
+*.[Cc]ache
+!*[Cc]ache/
+packages/
+!packages/build/
+*.nupkg
+*.snupkg
+[Pp]roject_Backup/
+*.[Ll]og
