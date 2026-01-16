@@ -17,3 +17,5 @@ app.UseHttpsRedirection();
 app.MapGet("/ping", () => "pongiii");
 
 app.Run();
+
+public partial class Program { }
