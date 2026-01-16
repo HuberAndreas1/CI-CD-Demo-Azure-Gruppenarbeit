@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "7NDULjoYiGo=",
+  "success": true,
+  "projectFilePath": "/Users/lucahaas/Desktop/HTL/5AHIF/PROG/aspnet/aspnet.csproj",
+  "expectedPackageFiles": [
+    "/Users/lucahaas/.nuget/packages/microsoft.aspnetcore.openapi/10.0.1/microsoft.aspnetcore.openapi.10.0.1.nupkg.sha512",
+    "/Users/lucahaas/.nuget/packages/microsoft.openapi/2.0.0/microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
