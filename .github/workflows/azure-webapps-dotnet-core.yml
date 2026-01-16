@@ -51,6 +51,9 @@ jobs:
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
           restore-keys: |
             ${{ runner.os }}-nuget-
+            
+      - name: Navigate to dotnet project
+        run: cd ./aspnet
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
@@ -62,7 +65,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
+          path: ${{env.DOTNET_ROOT}}/pingponger
 
   deploy:
     permissions:
