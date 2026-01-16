@@ -53,7 +53,7 @@ jobs:
             ${{ runner.os }}-nuget-
             
       - name: Navigate to dotnet project
-        run: cd ./aspnet
+        run: cd ./backend
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
