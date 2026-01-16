@@ -27,6 +27,7 @@ if (app.Environment.IsDevelopment())
 app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
 
 app.MapGet("/ping", () => "pongiii");
+app.MapGet("/", () => "Hello from Azure!");
 
 app.Run();
 
