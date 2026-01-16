@@ -51,15 +51,15 @@ jobs:
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
           restore-keys: |
             ${{ runner.os }}-nuget-
-            
-      - name: Navigate to dotnet project
-        run: cd ./backend
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
+        working-directory: backend
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/pingponger
+        working-directory: backend
+
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
